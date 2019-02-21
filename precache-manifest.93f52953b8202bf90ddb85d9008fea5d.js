@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/hypnotic-circles/static/js/2.57a5c759.chunk.js"
   },
   {
-    "revision": "e7f7a463bacdd886290bd6c64fb060a1",
+    "revision": "dfc1638c7f3d39c9a8647fb03cf5c7c0",
     "url": "/hypnotic-circles/index.html"
   }
 ];

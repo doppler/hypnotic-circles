@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/hypnotic-circles/precache-manifest.bc8221c4414f9961f5abddf2225bb80c.js"
+  "/hypnotic-circles/precache-manifest.93f52953b8202bf90ddb85d9008fea5d.js"
 );
 
 workbox.clientsClaim();
