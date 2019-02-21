@@ -2,10 +2,11 @@
   background-color: black;
   height: 100vh;
 }
-
+svg g {
+  transform-origin: center;
+}
 svg circle {
   fill: transparent;
   stroke: white;
-  stroke-width: 1px;
   mix-blend-mode: lighten;
 }

@@ -6,6 +6,8 @@ const svgDimensionsFromWindowSize = () => ({
   height: window.innerHeight
 });
 
+const r = 100;
+
 const App = () => {
   const [{ width, height }, setSvgDimensions] = useState(
     svgDimensionsFromWindowSize()
@@ -17,26 +19,47 @@ const App = () => {
     });
   }, []);
 
-  const r = 100;
   return (
     <div id="App">
       <svg {...{ width, height }}>
-        <circle cx={width / 2} cy={height / 2} r={r} />
         {Array.from({ length: 6 }).map((_, i) => {
           let angle = 60 * (i + 1);
           let radian = (angle * Math.PI) / 180;
-          let cx = width / 2 + r * Math.cos(radian);
-          let cy = height / 2 + r * Math.sin(radian);
-          return (
-            <circle
-              {...{ cx, cy, r }}
-              style={{ fill: `hsl(${angle}, 100%, 50%, 0.5)` }}
-            />
-          );
+          let center = {
+            x: width / 2 + r * 3 * Math.cos(radian),
+            y: height / 2 + r * 3 * Math.sin(radian)
+          };
+          return <SixCircleGroup center={center} rotate={angle} />;
         })}
       </svg>
     </div>
   );
 };
 
+const SixCircleGroup = ({ center, rotate }) => {
+  return (
+    <g
+      style={{
+        transformOrigin: `${center.x}px ${center.y}px`,
+        transform: `rotate(${rotate - 60}deg)`
+      }}
+    >
+      {Array.from({ length: 6 }).map((_, i) => {
+        let angle = 60 * (i + 1);
+        let radian = (angle * Math.PI) / 180;
+        let cx = center.x + r * Math.cos(radian);
+        let cy = center.y + r * Math.sin(radian);
+        return (
+          <circle
+            {...{ cx, cy, r }}
+            style={{
+              fill: `hsla(${angle}, 100%, 50%, 0.5)`
+            }}
+          />
+        );
+      })}
+      ;
+    </g>
+  );
+};
 export default App;
