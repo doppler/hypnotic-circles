@@ -6,7 +6,5 @@ svg g {
   transform-origin: center;
 }
 svg circle {
-  fill: transparent;
-  stroke: white;
   mix-blend-mode: lighten;
 }

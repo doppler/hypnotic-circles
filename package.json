@@ -1,8 +1,10 @@
 {
-  "name": "circle-grid",
+  "name": "hypnotic-circles",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://doppler.github.io/hypnotic-circles",
   "dependencies": {
+    "gh-pages": "^2.0.1",
     "react": "^16.8.2",
     "react-dom": "^16.8.2",
     "react-scripts": "2.1.5"
