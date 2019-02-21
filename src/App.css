@@ -1,4 +1,11 @@
 #App {
-  background-color: darkgoldenrod;
+  background-color: black;
   height: 100vh;
+}
+
+svg circle {
+  fill: transparent;
+  stroke: white;
+  stroke-width: 1px;
+  mix-blend-mode: lighten;
 }
