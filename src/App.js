@@ -6,7 +6,7 @@ const svgDimensionsFromWindowSize = () => ({
   height: window.innerHeight
 });
 
-const r = 100;
+const r = 50;
 
 const App = () => {
   const [{ width, height }, setSvgDimensions] = useState(
@@ -29,7 +29,7 @@ const App = () => {
             x: width / 2 + r * 3 * Math.cos(radian),
             y: height / 2 + r * 3 * Math.sin(radian)
           };
-          return <SixCircleGroup center={center} rotate={angle} />;
+          return <SixCircleGroup key={i} center={center} rotate={angle - 60} />;
         })}
       </svg>
     </div>
@@ -41,7 +41,7 @@ const SixCircleGroup = ({ center, rotate }) => {
     <g
       style={{
         transformOrigin: `${center.x}px ${center.y}px`,
-        transform: `rotate(${rotate - 60}deg)`
+        transform: `rotate(${rotate}deg)`
       }}
     >
       {Array.from({ length: 6 }).map((_, i) => {
@@ -51,6 +51,7 @@ const SixCircleGroup = ({ center, rotate }) => {
         let cy = center.y + r * Math.sin(radian);
         return (
           <circle
+            key={i}
             {...{ cx, cy, r }}
             style={{
               fill: `hsla(${angle}, 100%, 50%, 0.5)`
